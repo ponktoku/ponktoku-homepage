@@ -1,0 +1,41 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* dark mode */
+  --white: #eeeeee;
+  --blue-pastel: #88ccca;
+  --dark-gray: #202023;
+  --yellow: #FBD38D;
+  --yellow-highlight: #f6ad55;
+  --pink: #EB5DB4;
+  --highlight-box-dark: #313134;
+  /* light mode */
+  --purple: #805AD5;
+  --purple-highlight-light: #6b46c1;
+  --blue-light: #3D7AED;
+  --green-links-light: #2C7A7B;
+  --color-text-1-light: #1A202C;
+  --bkg-light: #F0E7DB;
+  --navbar-bkg-light: #f4ede4;
+}
+
+html {
+  background-color: var(--bkg-light);
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: var(--color-text-1-light);
+}
+body {
+
+}
+
+/* Dark mode */
+
+html.dark {
+  background-color: var(--dark-gray);
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  color: var(--white);
+}
