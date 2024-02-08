@@ -1,8 +1,68 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <MainLayout>
+  <div
+    class="my-6 p-3 text-center rounded-lg text-lm-text-color dark:text-dm-white bg-lm-navbar-bkg dark:bg-dm-highlight-box"
+  >
+    Hello, I'm a learning developer based in Australia!
+  </div>
+
+  <Hero />
+
+  <div class="mb-6">
+    <h3
+      class="text-xl font-semibold mt-6 mb-3 underline underline-offset-4 decoration-4 decoration-[#525252]"
+    >
+      Work
+    </h3>
+    <p>I worked intasd</p>
+    <div class="text-center my-4">
+      <Button buttonText="My portfolio >" destination="/works" />
+    </div>
+  </div>
+
+  <div>
+    <h3
+      class="text-xl font-semibold mt-6 mb-3 underline underline-offset-4 decoration-4 decoration-[#525252]"
+    >
+      Bio
+    </h3>
+    <div class="mb-6">
+      <div>
+        <span class="font-bold mr-4">2001</span>Born in Melbourne, Australia
+      </div>
+      <div>
+        <span class="font-bold mr-4">2023</span>Completed the Bachelor of
+        Computer Science (Software Development) at Swinburne University of
+        Technology, Melbourne
+      </div>
+      <div>
+        <span class="font-bold mr-4">2024+</span>Unemployed (無職)
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3
+      class="text-xl font-semibold mt-6 mb-3 underline underline-offset-4 decoration-4 decoration-[#525252]"
+    >
+      I &#9829
+    </h3>
+    <p>Gaming, Listening to Music, Art, Learning, Pen Spinning (ペン回し)</p>
+  </div>
+
+  <div>
+    <h3
+      class="text-xl font-semibold mt-6 mb-3 underline underline-offset-4 decoration-4 decoration-[#525252]"
+    >
+      On the web
+    </h3>
+  </div>
+
   <h1 class="text-5xl dark:text-white">Index</h1>
   <p class="text-5xl">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero architecto

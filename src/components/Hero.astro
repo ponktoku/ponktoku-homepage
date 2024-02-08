@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "../assets/danny-with-border.png";
+---
+
+<div class="flex justify-between">
+  <div>
+    <h1
+      class="text-4xl leading-tight font-bold text-lm-text-color dark:text-dm-white"
+    >
+      Danny Bao
+    </h1>
+    <p>Dabbler in Tech ( Developer / Learner / Gamer )</p>
+  </div>
+
+  <div>
+    <Image src={heroImage} alt="Danny Bao" height={100} width={100} />
+  </div>
+</div>
