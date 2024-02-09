@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.1.1",
     "@astrojs/preact": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/m-plus-rounded-1c": "^5.0.11",
