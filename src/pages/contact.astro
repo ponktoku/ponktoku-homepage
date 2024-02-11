@@ -3,5 +3,39 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-  <h1>hey</h1>
+  <div class="flex h-full w-full grow flex-col overflow-hidden">
+    <div
+      class="m-auto flex w-full flex-col items-center justify-center justify-self-center"
+    >
+      <div class="flex flex-col gap-4 lg:ml-6">
+        <div class="flex flex-col lg:flex-row lg:gap-12">
+          <div class="w-20 text-lm-green dark:text-dm-green-button font-bold lg:text-right">Location</div>
+          <div>
+            <a
+              href="https://savvytime.com/converter/australia-melbourne"
+              class="relative no-underline expand-touch">Melbourne, Australia</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row lg:gap-12">
+          <div class="w-20 text-lm-green dark:text-dm-green-button font-bold lg:text-right">Phone</div>
+          <div>
+            <p class="relative"
+              >+61 0415 341 319</
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row lg:gap-12">
+          <div class="w-20 text-lm-green dark:text-dm-green-button font-bold lg:text-right">Email</div>
+          <div>
+            <p class="relative"
+              >dannybao39@gmail.com</
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </MainLayout>
