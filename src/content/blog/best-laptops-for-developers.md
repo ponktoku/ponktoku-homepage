@@ -4,6 +4,7 @@ pubDate: 2024-01-20
 author: 'John Doe'
 cover: 'image1.png'
 tags: ['tech', 'hardware']
+category: 'tech'
 slug: the-best-laptops-for-developers-in-2024
 ---
 
