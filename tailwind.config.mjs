@@ -29,6 +29,9 @@ export default {
 			'lm-text-color': '#1A202C',
 			'lm-bkg': '#F0E7DB',
 			'lm-navbar-bkg': '#f4ede4',
+			'lm-gray-border': '#525252',
+			'article-bg': '#27272A',
+			'article-border': '#3F3F46',
 		},
 		extend: {
 		},

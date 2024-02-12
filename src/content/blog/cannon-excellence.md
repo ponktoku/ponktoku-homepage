@@ -1,5 +1,6 @@
 ---
 title: "Capturing Life's Moments with Canon Excellence"
+description: 'How to steal life 101'
 pubDate: 2024-01-15
 author: 'David Mitchell'
 cover: 'image2.png'

@@ -1,5 +1,6 @@
 ---
 title: 'The best laptops for developers in 2024'
+description: 'ChatGPT summary of the best laptops in 2024 for devs'
 pubDate: 2024-01-20
 author: 'John Doe'
 cover: 'image1.png'

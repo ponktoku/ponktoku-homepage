@@ -2,6 +2,21 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Hero from "../components/Hero.astro";
+import MostRecentArticle from "../components/MostRecentArticle.astro";
+
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+
+const allBlogArticles: CollectionEntry<"blog">[] = (
+  await getCollection("blog")
+).sort(
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const mostRecentArticle: CollectionEntry<"blog"> = allBlogArticles[0];
+
+const otherArticles: CollectionEntry<"blog">[] = allBlogArticles.slice(1);
 ---
 
 <MainLayout>
@@ -67,6 +82,18 @@ import Hero from "../components/Hero.astro";
     >
       On the web
     </h3>
+  </div>
+
+  <div class="my-6">
+    <div class="flex justify-between mb-3 items-center">
+      <p
+        class="text-xl font-semibold mt-6 mb-3 underline underline-offset-8 decoration-4 decoration-[#525252]"
+      >
+        Latest blog post
+      </p>
+      <Button buttonText="View all" destination="/posts" />
+    </div>
+    <MostRecentArticle article={mostRecentArticle} />
   </div>
 
   <h1 class="text-5xl dark:text-white">Index</h1>

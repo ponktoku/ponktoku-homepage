@@ -1,0 +1,38 @@
+---
+import { formatDate } from "../utils";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  article: CollectionEntry<"blog">;
+}
+
+const { article } = Astro.props;
+---
+
+<div
+  class="relative border bg-dm-white dark:bg-article-bg border-article-border dark:border-article-border aspect-video hover:opacity-80 transition-opacity shadow-lg"
+>
+  <a href={"/blog/" + article.slug}>
+    <img
+      src={"/cover/" + article.data.cover}
+      class="object-cover object-center"
+    />
+    <div
+      class="absolute top-0 bg-white dark:bg-article-bg px-2 py-1 text-sm flex items-center justify-between border-r border-b border-article-border dark:border-article-border"
+    >
+      <p>{formatDate(article.data.pubDate)}</p>
+    </div>
+  </a>
+
+  <div
+    class="bg-white dark:bg-article-bg p-2 border-t border-article-border dark:border-article-border flex flex-col-reverse"
+  >
+    <div class="text-sm mt-1 dark:text-dm-white">
+      {article.data.description}
+    </div>
+    <a href={"/blog/" + article.slug} class="font-bold dark:text-dm-white"
+      >{article.data.title}</a
+    >
+  </div>
+</div>
