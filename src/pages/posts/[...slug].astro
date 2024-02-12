@@ -27,8 +27,13 @@ const { Content } = await entry.render();
       {formatDate(entry.data.pubDate)}
     </p>
   </div>
-  <img src={"/cover/" + entry.data.cover} alt="Article Image" class="my-6" />
-  <h1 class="text-4xl font-bold mt-8 mb-4">{entry.data.title}</h1>
+  <img
+    src={"/cover/" + entry.data.cover}
+    alt="Article cover image"
+    class="my-6"
+    width="640"
+  />
+  <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
   <Tags tags={entry.data.tags} />
   <Content />
 </MainLayout>
