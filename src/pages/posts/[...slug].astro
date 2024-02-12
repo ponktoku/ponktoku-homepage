@@ -1,0 +1,47 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getEntry } from "astro:content";
+import Button from "../../components/Button.astro";
+import { formatDate } from "../../utils";
+import Tags from "../../components/Tags.astro";
+
+const { slug } = Astro.params;
+
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const entry = await getEntry("blog", slug);
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+---
+
+<MainLayout>
+  <div class="flex justify-between items-center">
+    <Button buttonText="< All posts" destination="/posts" />
+    <p>
+      {formatDate(entry.data.pubDate)}
+    </p>
+  </div>
+  <img src={"/cover/" + entry.data.cover} alt="Article Image" class="my-6" />
+  <h1 class="text-4xl font-bold mt-8 mb-4">{entry.data.title}</h1>
+  <Tags tags={entry.data.tags} />
+  <Content />
+</MainLayout>
+
+<!-- These styles effect the post Content -->
+<style is:global>
+  p {
+    margin: 20px 0;
+  }
+
+  h2 {
+    margin: 20px 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+</style>
