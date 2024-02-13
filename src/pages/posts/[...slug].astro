@@ -20,7 +20,7 @@ if (entry === undefined) {
 const { Content } = await entry.render();
 ---
 
-<MainLayout>
+<MainLayout title={entry.data.title}>
   <div class="flex justify-between items-center">
     <Button buttonText="< All posts" destination="/posts" />
     <p>

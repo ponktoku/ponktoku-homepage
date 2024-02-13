@@ -24,7 +24,7 @@ const tagArticles = allBlogArticles.filter((article) =>
 );
 ---
 
-<MainLayout>
+<MainLayout title=`${tag} tags`>
   <div class="flex justify-between items-center pb-3">
     <h1 class="text-2xl font-bold">#{capitalise(tag)} Posts</h1>
     <Button buttonText="All posts" destination="/posts" />
