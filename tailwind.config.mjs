@@ -20,6 +20,8 @@ export default {
 			'dm-blue-pastel-highlight': '#2c3839',
 			'dm-button-hover': '#4fd1c5',
 			'dm-green-button': '#81E6D9',
+			'dm-badge-bg': '#34404A',
+			'dm-badge-text': '#9AE6B4',
 			// light mode
 			'lm-purple': '#805AD5',
 			'lm-purple-highlight': '#6b46c1',
@@ -30,6 +32,9 @@ export default {
 			'lm-bkg': '#F0E7DB',
 			'lm-navbar-bkg': '#f4ede4',
 			'lm-gray-border': '#525252',
+			'lm-badge-bg': '#C6F6D5',
+			'lm-badge-text': '#22543D',
+			// Misc.
 			'article-bg': '#27272A',
 			'article-border': '#3F3F46',
 		},

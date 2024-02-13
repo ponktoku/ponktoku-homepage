@@ -13,26 +13,28 @@ const allBlogArticles: CollectionEntry<"blog">[] = (
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 
-const { tag } = Astro.params;
+const { category } = Astro.params;
 
-if (tag === undefined) {
-  throw new Error("Tag is required in params");
+if (category === undefined) {
+  throw new Error("Category is required in params");
 }
 
-const tagArticles = allBlogArticles.filter((article) =>
-  article.data.tags.includes(tag)
+const categoryArticles = allBlogArticles.filter((article) =>
+  article.data.category.includes(category)
 );
 ---
 
 <MainLayout>
   <div class="flex justify-between items-center pb-3">
-    <h1 class="text-2xl font-bold">#{capitalise(tag)} Posts</h1>
-    <Button buttonText="All posts" destination="/posts" />
+    <h1 class="text-2xl font-bold">
+      All Posts in the "{capitalise(category)}" Category
+    </h1>
+    <Button buttonText="All categories" destination="/tag-category-index" />
   </div>
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {
-      tagArticles.map((article) => (
+      categoryArticles.map((article) => (
         <>
           <ArticleCard article={article} />
         </>

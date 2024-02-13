@@ -24,23 +24,35 @@ const categories = [
 ---
 
 <MainLayout>
-  <h1>Tag Index</h1>
-  {
-    tags.map((tag) => (
-      <p>
-        <a href={`/posts/tag/${tag}`}>{capitalise(tag)}</a>
-      </p>
-    ))
-  }
+  <h1 class="text-4xl font-bold mb-3">Tag Index</h1>
+  <ul>
+    <div class="flex flex-wrap">
+      {
+        tags.map((tag) => (
+          <p
+            class="mr-2 my-2 p-2 rounded-md text-lm-badge-text dark:text-dm-badge-text 
+          bg-lm-badge-bg dark:bg-dm-badge-bg hover:opacity-80"
+          >
+            <a href={`/posts/tag/${tag}`}>{capitalise(tag)}</a>
+          </p>
+        ))
+      }
+    </div>
+  </ul>
 
-  <h1>Categories</h1>
-  <div>
-    {
-      categories.map((category) => (
-        <p>
-          <a href={``}>{category}</a>
-        </p>
-      ))
-    }
-  </div>
+  <h1 class="text-4xl font-bold mt-6 mb-3">Categories</h1>
+  <ul>
+    <div class="flex flex-wrap">
+      {
+        categories.map((category) => (
+          <p
+            class="mr-2 my-2 p-2 rounded-md text-lm-badge-text dark:text-dm-badge-text 
+          bg-lm-badge-bg dark:bg-dm-badge-bg hover:opacity-80"
+          >
+            <a href={`/posts/category/${category}`}>{capitalise(category)}</a>
+          </p>
+        ))
+      }
+    </div>
+  </ul>
 </MainLayout>
