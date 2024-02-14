@@ -18,6 +18,8 @@ if (entry === undefined) {
 }
 
 const { Content } = await entry.render();
+
+export const prerender = false;
 ---
 
 <MainLayout title={entry.data.title}>

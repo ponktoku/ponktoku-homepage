@@ -22,6 +22,8 @@ if (category === undefined) {
 const categoryArticles = allBlogArticles.filter((article) =>
   article.data.category.includes(category)
 );
+
+export const prerender = false;
 ---
 
 <MainLayout title=`${category} category`>

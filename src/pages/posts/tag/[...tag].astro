@@ -22,6 +22,8 @@ if (tag === undefined) {
 const tagArticles = allBlogArticles.filter((article) =>
   article.data.tags.includes(tag)
 );
+
+export const prerender = false;
 ---
 
 <MainLayout title=`${tag} tags`>
