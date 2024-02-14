@@ -1,7 +1,55 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import TimeLineEducation from "../components/cv/TimeLineEducation.astro";
+import TimeLineExperience from "../components/cv/TimeLineExperience.astro";
 ---
 
 <MainLayout title="CV">
-  <h1 class="font-bold text-xl">CV / Resume</h1>
+  <h1 class="font-bold text-3xl mb-7">CV / Resume</h1>
+
+  <section>
+    <h2 class="font-bold text-2xl my-6">About</h2>
+    <p class="text-justify">
+      My name is Danny Bao, 22 years old. A self-proclaimed "Dabbler in Tech"
+      that graduated from Swinburne University of Technology with a Bachelor
+      Degree in Computer Science (Software Development) to show for it. I can't
+      say I whole heartedly say I love tech/development, it has its ups and
+      downs and I'm looking to explore or <span class="italic">dabble</span>, to
+      find what sticks for me. Currently unemployed.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="font-bold text-2xl my-6">Education</h2>
+    <TimeLineEducation />
+  </section>
+
+  <section>
+    <h2 class="font-bold text-2xl my-6">Experience</h2>
+    <TimeLineExperience />
+  </section>
+
+  <section>
+    <h2 class="font-bold text-2xl my-6">Certifications</h2>
+  </section>
+
+  <section>
+    <h2 class="font-bold text-2xl mt-6 mb-3">Skills</h2>
+    <div>
+      <ul>
+        <li class="font-semibold text-xl">Front-end</li>
+        <div>tech</div>
+        <li class="font-semibold text-xl">Other</li>
+        <div>other tech</div>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="font-bold text-2xl my-6">Interests</h2>
+    <p>
+      I also dabble in many other things such as learning Japanese, playing
+      'Gacha' games, and more.
+    </p>
+  </section>
 </MainLayout>
