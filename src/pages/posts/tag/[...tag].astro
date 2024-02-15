@@ -1,29 +1,38 @@
 ---
 import MainLayout from "../../../layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
-import type { CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import ArticleCard from "../../../components/ArticleCard.astro";
 import { capitalise } from "../../../utils";
 import Button from "../../../components/Button.astro";
 
-const allBlogArticles: CollectionEntry<"blog">[] = (
-  await getCollection("blog")
-).sort(
-  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+export async function getStaticPaths() {
+  const allBlogArticles: CollectionEntry<"blog">[] = (
+    await getCollection("blog")
+  ).sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  const uniqueTags = [
+    ...new Set(allBlogArticles.map((entry) => entry.data.tags).flat()),
+  ];
+
+  return uniqueTags.map((tag) => {
+    const filteredPosts = allBlogArticles.filter((article) =>
+      article.data.tags.includes(tag)
+    );
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
+}
 
 const { tag } = Astro.params;
 
-if (tag === undefined) {
-  throw new Error("Tag is required in params");
-}
+if (!tag) throw new Error("Tag is required in params");
 
-const tagArticles = allBlogArticles.filter((article) =>
-  article.data.tags.includes(tag)
-);
-
-export const prerender = false;
+const { posts } = Astro.props;
 ---
 
 <MainLayout title=`${tag} tags`>
@@ -34,7 +43,7 @@ export const prerender = false;
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {
-      tagArticles.map((article) => (
+      posts.map((article) => (
         <>
           <ArticleCard article={article} />
         </>

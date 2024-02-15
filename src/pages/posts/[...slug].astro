@@ -1,25 +1,33 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import { getEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Button from "../../components/Button.astro";
 import { formatDate } from "../../utils";
 import Tags from "../../components/Tags.astro";
 
-const { slug } = Astro.params;
+export async function getStaticPaths() {
+  const allBlogArticles: CollectionEntry<"blog">[] =
+    await getCollection("blog");
 
-if (slug === undefined) {
-  throw new Error("Slug is required");
+  return allBlogArticles.map((entry) => ({
+    params: {
+      slug: entry.slug,
+    },
+    props: { entry },
+  }));
 }
 
-const entry = await getEntry("blog", slug);
+type Props = {
+  entry: CollectionEntry<"blog">;
+};
+
+const { entry } = Astro.props;
 
 if (entry === undefined) {
   return Astro.redirect("/404");
 }
 
 const { Content } = await entry.render();
-
-export const prerender = false;
 ---
 
 <MainLayout title={entry.data.title}>

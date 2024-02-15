@@ -6,24 +6,34 @@ import ArticleCard from "../../../components/ArticleCard.astro";
 import { capitalise } from "../../../utils";
 import Button from "../../../components/Button.astro";
 
-const allBlogArticles: CollectionEntry<"blog">[] = (
-  await getCollection("blog")
-).sort(
-  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+export async function getStaticPaths() {
+  const allBlogArticles: CollectionEntry<"blog">[] = (
+    await getCollection("blog")
+  ).sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  const uniqueCategories = [
+    ...new Set(allBlogArticles.map((entry) => entry.data.category).flat()),
+  ];
+
+  return uniqueCategories.map((category) => {
+    const categoryArticles = allBlogArticles.filter((article) =>
+      article.data.category.includes(category)
+    );
+    return {
+      params: { category },
+      props: { posts: categoryArticles },
+    };
+  });
+}
 
 const { category } = Astro.params;
 
-if (category === undefined) {
-  throw new Error("Category is required in params");
-}
+if (!category) throw new Error("Category is required in params");
 
-const categoryArticles = allBlogArticles.filter((article) =>
-  article.data.category.includes(category)
-);
-
-export const prerender = false;
+const { posts } = Astro.props;
 ---
 
 <MainLayout title=`${category} category`>
@@ -36,7 +46,7 @@ export const prerender = false;
 
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
     {
-      categoryArticles.map((article) => (
+      posts.map((article) => (
         <>
           <ArticleCard article={article} />
         </>
