@@ -15,7 +15,7 @@ export async function getStaticPaths({ paginate }: any) {
   );
 
   return paginate(allBlogArticles, {
-    pageSize: 2,
+    pageSize: 6,
   });
 }
 
@@ -45,7 +45,7 @@ const firstPath = pathname[1];
   </div>
 
   {
-    allPosts.length > 2 ? (
+    allPosts.length > 6 ? (
       <div class="mt-4">
         <Pagination
           length={page.lastPage}
