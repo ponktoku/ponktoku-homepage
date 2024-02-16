@@ -1,5 +1,5 @@
 ---
-import type { GetStaticPaths } from "astro";
+import type { Page } from "astro";
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
@@ -23,9 +23,9 @@ const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
 
 const { page } = Astro.props;
 
-// interface Props {
-//   page: CollectionEntry<"blog">[];
-// }
+interface Props {
+  page: Page;
+}
 
 const pathname = new URL(Astro.request.url).pathname.split("/");
 const firstPath = pathname[1];
