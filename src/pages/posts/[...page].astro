@@ -1,0 +1,62 @@
+---
+import type { GetStaticPaths } from "astro";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import ArticleCard from "../../components/ArticleCard.astro";
+import Pagination from "../../components/Pagination.astro";
+
+export async function getStaticPaths({ paginate }: any) {
+  const allBlogArticles: CollectionEntry<"blog">[] = (
+    await getCollection("blog")
+  ).sort(
+    (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+      b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  );
+
+  return paginate(allBlogArticles, {
+    pageSize: 2,
+  });
+}
+
+const allPosts: CollectionEntry<"blog">[] = await getCollection("blog");
+
+const { page } = Astro.props;
+
+// interface Props {
+//   page: CollectionEntry<"blog">[];
+// }
+
+const pathname = new URL(Astro.request.url).pathname.split("/");
+const firstPath = pathname[1];
+---
+
+<MainLayout title="All posts">
+  <h1 class="text-2xl pb-3 font-bold">All posts</h1>
+  <h2>Page {page.currentPage} of {page.lastPage}</h2>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    {
+      page.data.map((article) => (
+        <>
+          <ArticleCard article={article} />
+        </>
+      ))
+    }
+  </div>
+
+  {
+    allPosts.length > 2 ? (
+      <div class="mt-4">
+        <Pagination
+          length={page.lastPage}
+          currentUrl={page.url.current}
+          currentPage={page.currentPage}
+          firstUrl={`/${firstPath}`}
+          prevUrl={page.url.prev}
+          nextUrl={page.url.next}
+          lastUrl={`/${firstPath}/${page.lastPage}`}
+        />
+      </div>
+    ) : null
+  }
+</MainLayout>
