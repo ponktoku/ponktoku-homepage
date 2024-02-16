@@ -2,69 +2,40 @@
 const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
   Astro.props;
 const paginationList = Array.from({ length: Number(length) }, (_, i) => i + 1);
+console.log(currentPage);
 ---
 
-<nav aria-label="Blog pages" class="pagination pagination-default">
-  {
-    firstUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </span>
-    ) : (
-      <a href={firstUrl} class="pagination__link">
-        <i class="pi-angle-left" />
-        <i class="pi-angle-left" />
-      </a>
-    )
-  }
-
-  {
-    prevUrl ? (
-      <a href={prevUrl} class="pagination__link">
-        <i class="pi-angle-left" />
-      </a>
-    ) : (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-left" />
-      </span>
-    )
-  }
-
-  {
-    paginationList.map((num) => (
+<nav aria-label="Page navigation example" class="flex justify-center mt-8">
+  <ul class="inline-flex -space-x-px text-sm">
+    <li>
       <a
-        href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
-        class={`pagination__link ${currentPage == num ? "disabled active" : ""}`}
+        href={prevUrl}
+        class="flex items-center justify-center px-3 h-8 ms-0 leading-tight bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-article-bg dark:border-article-border dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        >Previous</a
       >
-        {num}
-      </a>
-    ))
-  }
-
-  {
-    !nextUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <a href={nextUrl} class="pagination__link">
-        <i class="pi-angle-right" />
-      </a>
-    )
-  }
-
-  {
-    lastUrl == currentUrl ? (
-      <span class="pagination__link disabled">
-        <i class="pi-angle-right" />
-        <i class="pi-angle-right" />
-      </span>
-    ) : (
-      <a href={lastUrl} class="pagination__link">
-        <i class="pi-angle-right" />
-        <i class="pi-angle-right" />
-      </a>
-    )
-  }
+    </li>
+    {
+      paginationList.map((num) => (
+        <li>
+          <a
+            href={`${firstUrl}${num == 1 ? "" : "/" + num}`}
+            class={
+              num === currentPage
+                ? "flex items-center justify-center px-3 h-8 leading-tight text-white bg-lm-green border border-gray-300 hover:bg-lm-green-hover hover:text-white dark:bg-dm-green-button dark:border-article-border dark:text-lm-text-color dark:hover:bg-dm-button-hover dark:hover:text-lm-text-color"
+                : "flex items-center justify-center px-3 h-8 leading-tight bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-article-bg dark:border-article-border dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+            }
+          >
+            {num}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a
+        href={nextUrl}
+        class="flex items-center justify-center px-3 h-8 leading-tight bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-article-bg dark:border-article-border dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+        >Next</a
+      >
+    </li>
+  </ul>
 </nav>
