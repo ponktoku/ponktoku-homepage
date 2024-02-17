@@ -1,0 +1,19 @@
+---
+import { Image } from "astro:assets";
+
+const { title, href, thumbnail, alt, description } = Astro.props;
+---
+
+<div>
+  <a href={"/works/" + href} class="description">
+    <Image src={thumbnail} alt={alt} />
+    <div class="text-center my-2 text-xl">{title}</div>
+    <p class="text-sm text-center">{description}</p>
+  </a>
+</div>
+
+<style>
+  img {
+    border-radius: 12px;
+  }
+</style>
