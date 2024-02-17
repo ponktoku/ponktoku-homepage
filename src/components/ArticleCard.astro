@@ -1,7 +1,8 @@
 ---
-import { formatDate } from "../utils";
+import { formatDate, capitaliseAll } from "../utils";
 import type { CollectionEntry } from "astro:content";
 import Tags from "./Tags.astro";
+import CategoryBadge from "./CategoryBadge.astro";
 
 const { article } = Astro.props;
 
@@ -27,6 +28,12 @@ interface Props {
       </h2>
       <p class="text-gray-600 dark:text-dm-white text-sm mb-4">
         {formatDate(article.data.pubDate)}
+        <CategoryBadge
+          href={"/posts/category" + article.data.category}
+          class="ml-1"
+        >
+          {capitaliseAll(article.data.category)}
+        </CategoryBadge>
       </p>
       <Tags tags={article.data.tags} />
     </div>

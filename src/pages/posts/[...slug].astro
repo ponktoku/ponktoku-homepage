@@ -4,7 +4,7 @@ import { getCollection, type CollectionEntry } from "astro:content";
 import Button from "../../components/Button.astro";
 import { formatDate, capitaliseAll } from "../../utils";
 import Tags from "../../components/Tags.astro";
-import GrayBadge from "../../components/GrayBadge.astro";
+import CategoryBadge from "../../components/CategoryBadge.astro";
 
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
@@ -46,7 +46,9 @@ const { Content } = await entry.render();
   />
   <h1 class="text-4xl font-bold mb-4">
     {entry.data.title}
-    <GrayBadge>{capitaliseAll(entry.data.category)}</GrayBadge>
+    <CategoryBadge href={"/posts/category/" + entry.data.category}>
+      {capitaliseAll(entry.data.category)}
+    </CategoryBadge>
   </h1>
 
   <Tags tags={entry.data.tags} />
