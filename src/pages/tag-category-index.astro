@@ -1,7 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import { getCollection } from "astro:content";
-import { capitalise } from "../utils";
+import { capitalise, capitaliseAll } from "../utils";
 
 const allPosts = await getCollection("blog");
 const tags = [
@@ -49,7 +49,9 @@ const categories = [
             class="mr-2 my-2 p-2 rounded-md text-lm-badge-text dark:text-dm-badge-text 
           bg-lm-badge-bg dark:bg-dm-badge-bg hover:opacity-80"
           >
-            <a href={`/posts/category/${category}`}>{capitalise(category)}</a>
+            <a href={`/posts/category/${category}`}>
+              {capitaliseAll(category)}
+            </a>
           </p>
         ))
       }

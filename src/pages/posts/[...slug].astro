@@ -2,8 +2,9 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 import Button from "../../components/Button.astro";
-import { formatDate } from "../../utils";
+import { formatDate, capitaliseAll } from "../../utils";
 import Tags from "../../components/Tags.astro";
+import GrayBadge from "../../components/GrayBadge.astro";
 
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
@@ -43,7 +44,11 @@ const { Content } = await entry.render();
     class="my-6"
     width="640"
   />
-  <h1 class="text-4xl font-bold mb-4">{entry.data.title}</h1>
+  <h1 class="text-4xl font-bold mb-4">
+    {entry.data.title}
+    <GrayBadge>{capitaliseAll(entry.data.category)}</GrayBadge>
+  </h1>
+
   <Tags tags={entry.data.tags} />
   <Content />
 </MainLayout>

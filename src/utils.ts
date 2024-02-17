@@ -13,4 +13,8 @@ function capitalise(str: string): string {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export { formatDate, capitalise };
+function capitaliseAll(str: string):string {
+  return str.toUpperCase();
+}
+
+export { formatDate, capitalise, capitaliseAll };
