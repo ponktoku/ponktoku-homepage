@@ -1,0 +1,18 @@
+---
+interface Props {
+  otherSkills: string[];
+}
+
+const { otherSkills } = Astro.props;
+---
+
+{
+  otherSkills.map((skill) => (
+    <span
+      class="p-1 mx-0.5 border rounded-md text-center text-lm-blue dark:text-dm-pink
+      bg-[#f0f1fe] dark:bg-[#191f1f] border-lm-blue dark:border-dm-pink "
+    >
+      {skill}
+    </span>
+  ))
+}
