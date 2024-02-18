@@ -1,7 +1,16 @@
 ---
 interface Props {
-  meta: string;
+  class?: string;
 }
 
-const { meta } = Astro.props;
+const { class: className } = Astro.props;
 ---
+
+<span
+  class:list={[
+    "text-xs px-1 rounded-sm text-center font-bold text-lm-badge-text dark:text-dm-badge-text bg-lm-badge-bg dark:bg-dm-badge-bg",
+    className,
+  ]}
+>
+  <slot />
+</span>

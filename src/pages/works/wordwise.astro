@@ -1,12 +1,68 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
+import GrayBadge from "../../components/GrayBadge.astro";
+import MetaBadge from "../../components/MetaBadge.astro";
+import ExternalLinkSvg from "../../components/ExternalLinkSvg.astro";
+
+import { Image } from "astro:assets";
+
+import wordwise_01 from "../../assets/works/WordWiseFirstPage.png";
+import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
 ---
 
 <MainLayout>
-  <h1>Works / WordWise</h1>
-  <p>
+  <div class="flex items-baseline mb-4">
+    <a
+      href="/works"
+      class="text-lm-blue dark:text-dm-pink hover:underline hover:underline-offset-4 mr-2"
+      >Works
+    </a>
+    <span class="mr-2">/</span>
+    <h3 class="text-xl font-bold mr-2">WordWise</h3>
+    <GrayBadge>2022</GrayBadge>
+  </div>
+
+  <p class="text-justify">
     A Google Translate desktop app interface that can be used to mass translate
     .txt and .pdf files. Used to apply Metamorphic Testing to test the
     limitations of machine translation.
   </p>
+
+  <ul class="my-4">
+    <li>
+      <MetaBadge class="mr-2">SOURCE</MetaBadge>
+      <a
+        href="https://github.com/LyanHeng/DeepLearningTranslationApp"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-lm-blue
+        dark:text-dm-pink
+        hover:underline
+        hover:underline-offset-2"
+        >github.com/LyanHeng/DeepLearningTranslationApp
+        <ExternalLinkSvg />
+      </a>
+    </li>
+    <li>
+      <MetaBadge class="mr-2">PLATFORM</MetaBadge>
+      <span>Windows</span>
+    </li>
+    <li>
+      <MetaBadge class="mr-2">STACK</MetaBadge>
+      <span>Windows Presentation Format (WPF), C# .NET Framework 4.8</span>
+    </li>
+  </ul>
+
+  <Image
+    src={wordwise_01}
+    alt="WordWise Direct Translation Page"
+    class="rounded-lg mb-4"
+    quality={"mid"}
+  />
+  <Image
+    src={wordwise_02}
+    alt="WordWise Mass File Translation Page"
+    class="rounded-lg mb-4"
+    quality={"mid"}
+  />
 </MainLayout>
