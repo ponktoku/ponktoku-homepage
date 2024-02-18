@@ -3,6 +3,7 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import GrayBadge from "../../components/GrayBadge.astro";
 import MetaBadge from "../../components/MetaBadge.astro";
 import ExternalLinkSvg from "../../components/ExternalLinkSvg.astro";
+import Link from "../../components/Link.astro";
 
 import { Image } from "astro:assets";
 
@@ -31,17 +32,13 @@ import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
   <ul class="my-4">
     <li>
       <MetaBadge class="mr-2">SOURCE</MetaBadge>
-      <a
+      <Link
         href="https://github.com/LyanHeng/DeepLearningTranslationApp"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-lm-blue
-        dark:text-dm-pink
-        hover:underline
-        hover:underline-offset-2"
-        >github.com/LyanHeng/DeepLearningTranslationApp
-        <ExternalLinkSvg />
-      </a>
+      >
+        github.com/LyanHeng/DeepLearningTranslationApp<ExternalLinkSvg />
+      </Link>
     </li>
     <li>
       <MetaBadge class="mr-2">PLATFORM</MetaBadge>
