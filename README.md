@@ -15,17 +15,23 @@
 │   └── cover/
 ├── src/
 │   └── assets/
+│   │    # Non-public images/files
 │   └── components/
+│   │    # Astro components
 │   └── content/
-│       └── blog/
-│        # Astro Content collection for blog posts
+│   │    └── blog/
+│   │        # Astro Content collection for blog posts
 │   └── layouts/
+│   │    # Layout components
 │   └── pages/
-│       └── index.astro
+│   │    └── posts/
+│   │    └── works/
+│   │    └── index.astro
+│   │        # Page files  
 │   └── styles/
+│        # Global css styles
 └── package.json
 ```
-
 
 ## 🧞 Commands
 
@@ -40,3 +46,6 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
+---
+
+This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/). You are free fork this public project for your own use or inspiration at your own caution.
