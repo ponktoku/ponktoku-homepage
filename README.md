@@ -17,21 +17,21 @@ This homepage takes design inspiration from other homepages such as [Takuya Mats
 │   └── cover/
 ├── src/
 │   └── assets/
-│   │    # Non-public images/files
+│   │   # Non-public images/files
 │   └── components/
-│   │    # Astro components
+│   │   # Astro components
 │   └── content/
 │   │    └── blog/
 │   │        # Astro Content collection for blog posts
 │   └── layouts/
-│   │    # Layout components
+│   │   # Layout components
 │   └── pages/
 │   │    └── posts/
 │   │    └── works/
 │   │    └── index.astro
 │   │        # Page files  
 │   └── styles/
-│        # Global css styles
+│       # Global css styles
 └── package.json
 ```
 
