@@ -1,5 +1,7 @@
 # Danny's Homepage
 
+This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/). 
+
 ## Stack
 
 - [Astrojs](https://astro.build/) - A web framework for content driven websites with hybrid, static & server side rendering
@@ -46,6 +48,6 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
 
----
+## Licensing
 
-This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/). You are free fork this public project for your own use or inspiration at your own caution.
+This website is [GPL-3.0](./LICENSE) licensed. You are free fork this project for your own use or inspiration at your own caution.
