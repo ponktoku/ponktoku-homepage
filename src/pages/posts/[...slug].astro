@@ -32,27 +32,29 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title={entry.data.title}>
-  <div class="flex justify-between items-center">
-    <Button buttonText="< All posts" destination="/posts" />
-    <p>
-      {formatDate(entry.data.pubDate)}
-    </p>
-  </div>
-  <img
-    src={"/cover/" + entry.data.cover}
-    alt="Article cover image"
-    class="my-6"
-    width="640"
-  />
-  <h1 class="text-4xl font-bold mb-4">
-    {entry.data.title}
-    <CategoryBadge href={"/posts/category/" + entry.data.category}>
-      {capitaliseAll(entry.data.category)}
-    </CategoryBadge>
-  </h1>
+  <div data-pagefind-body>
+    <div class="flex justify-between items-center">
+      <Button buttonText="< All posts" destination="/posts" />
+      <p>
+        {formatDate(entry.data.pubDate)}
+      </p>
+    </div>
+    <img
+      src={"/cover/" + entry.data.cover}
+      alt="Article cover image"
+      class="my-6"
+      width="640"
+    />
+    <h1 class="text-4xl font-bold mb-4">
+      {entry.data.title}
+      <CategoryBadge href={"/posts/category/" + entry.data.category}>
+        {capitaliseAll(entry.data.category)}
+      </CategoryBadge>
+    </h1>
 
-  <Tags tags={entry.data.tags} />
-  <Content />
+    <Tags tags={entry.data.tags} />
+    <Content />
+  </div>
 </MainLayout>
 
 <!-- These styles effect the post Content -->

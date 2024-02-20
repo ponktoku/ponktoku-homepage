@@ -123,4 +123,24 @@ const mostRecentArticle: CollectionEntry<"blog"> = allBlogArticles[0];
     </div>
     <MostRecentArticle article={mostRecentArticle} />
   </div>
+
+  <div>
+    <h3
+      class="text-xl font-semibold mt-6 mb-3 underline underline-offset-4 decoration-4 decoration-[#525252]"
+    >
+      Search
+    </h3>
+
+    <div id="search"></div>
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        // @ts-ignore
+        new PagefindUI({
+          element: "#search",
+          showSubResults: true,
+          showImages: false,
+        });
+      });
+    </script>
+  </div>
 </MainLayout>
