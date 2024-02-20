@@ -8,17 +8,26 @@ import thumbWordWise from "../assets/works/WordWiseSecondPage.png";
 // Work descriptions
 const descriptionWordWise =
   "University Project investigating the validity of machine translations using Metamorphic Testing.";
+
+const descriptionHomepage = "My personal website/blog";
 ---
 
 <MainLayout title="My works">
   <h1 class="font-bold text-xl mb-4">Works / Projects</h1>
-  <section class="grid sm:grid-cols-1 md:grid-cols-2">
+  <section class="grid sm:grid-cols-1 md:grid-cols-2 gap-6">
     <WorkGridItem
-      title="WordWise (2022)"
+      title="ponktoku.dev homepage"
+      href="homepage"
+      thumbnail={thumbWordWise}
+      alt="ponktoku.dev thumbnail"
+      description={descriptionHomepage}
+    />
+    <WorkGridItem
+      title="WordWise"
       href="wordwise"
       thumbnail={thumbWordWise}
       alt="WordWise thumbnail"
-      description="University Project investigating the validity of machine translations using Metamorphic Testing."
+      description={descriptionWordWise}
     />
   </section>
 </MainLayout>

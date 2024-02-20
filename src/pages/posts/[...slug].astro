@@ -32,7 +32,7 @@ const { Content } = await entry.render();
 ---
 
 <MainLayout title={entry.data.title}>
-  <div data-pagefind-body>
+  <div data-pagefind-body class="text-justify">
     <div class="flex justify-between items-center">
       <Button buttonText="< All posts" destination="/posts" />
       <p>
@@ -42,7 +42,7 @@ const { Content } = await entry.render();
     <img
       src={"/cover/" + entry.data.cover}
       alt="Article cover image"
-      class="my-6"
+      class="my-6 rounded-lg"
       width="640"
     />
     <h1 class="text-4xl font-bold mb-4">
@@ -53,7 +53,10 @@ const { Content } = await entry.render();
     </h1>
 
     <Tags tags={entry.data.tags} />
-    <Content />
+
+    <div id="content">
+      <Content />
+    </div>
   </div>
 </MainLayout>
 
@@ -67,5 +70,21 @@ const { Content } = await entry.render();
     margin: 20px 0;
     font-size: 1.6rem;
     font-weight: 500;
+  }
+
+  #content {
+    margin-top: 20px;
+  }
+
+  #content a {
+    color: #3d7aed;
+  }
+
+  #content a:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 2px;
+  }
+  #content a.dark {
+    color: #eb5db4;
   }
 </style>

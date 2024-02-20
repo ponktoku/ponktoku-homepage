@@ -1,0 +1,45 @@
+---
+title: 'Get Current Page URL in Astro'
+description: 'How to get the page URL in Astrojs'
+pubDate: 2024-02-20
+author: 'Danny Bao'
+cover: 'astro-placeholder.jpg'
+tags: ['astro', 'javascript']
+category: 'Astro'
+slug: get-current-page-url-in-astro
+---
+
+[`Astro.url`](https://docs.astro.build/en/reference/api-reference/#astrourl) returns the current page URL from the Request object. The return value is a [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL) object which contains properties like pathname and origin.
+
+```js
+const currentPath = Astro.url.pathname;
+```
+
+Useful when you need to highlight navigation links based on current page:
+
+```jsx
+<a href="/me" class={currentPath === '/me' ? 'active' : ''}>
+  About Me
+</a>
+```
+
+## Cutting off the url pathname for nested URLs
+
+[String.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) splits a given string into an array of substrings based on a specific separator and returns an array of substrings. Thus, we use the `string.split()` JavaScript method to split the string URL by the `'/'` in the URL path. 
+
+Useful for when you have a nested path in your URL such as on a blog and your posts are nested inside a folder like `/localhost:4321/posts/...` and you want to use only part of the URL pathname to determine styling on the navigation bar. 
+
+```js
+const currentPath = Astro.url.pathname; // "/works/wordwise"
+const firstPath = currentPath.split("/")[1];
+console.log(firstPath); // returns 'works'
+
+currentPath.split("/")[0]; // returns '/'
+currentPath.split("/")[2]; // returns 'wordwise'
+```
+
+When square brackets with a number are added to the `split()` method, it specifies the maximum number of splits to perform. Alternatively you can also put a number inside the method brackets. E.g. `string.split('/', 2)`
+
+## Resources
+
+- [Get current page URL in Astro](https://petermekhaeil.com/til/astro-url/)

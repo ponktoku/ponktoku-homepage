@@ -1,0 +1,84 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import GrayBadge from "../../components/GrayBadge.astro";
+import MetaBadge from "../../components/MetaBadge.astro";
+import ExternalLinkSvg from "../../components/ExternalLinkSvg.astro";
+import Link from "../../components/Link.astro";
+
+import { Image } from "astro:assets";
+
+import wordwise_01 from "../../assets/works/WordWiseFirstPage.png";
+import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
+---
+
+<MainLayout title="ponktoku.dev (Homepage)">
+  <div class="flex items-baseline mb-4">
+    <a
+      href="/works"
+      class="text-lm-blue dark:text-dm-pink hover:underline hover:underline-offset-4 mr-2"
+      >Works
+    </a>
+    <span class="mr-2">/</span>
+    <h3 class="text-xl font-bold mr-2">ponktoku.dev homepage</h3>
+    <GrayBadge>2024</GrayBadge>
+  </div>
+
+  <article class="text-justify">
+    <p class="mb-4">
+      My personal website which contains information about myself, my works and
+      a blog post. The design/look takes inspiration from other homepages and
+      portfolios but is mainly based off <Link
+        href="https://www.craftz.dog/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Takuya Matsuyama's homepage,
+      </Link> however this website is built with <Link
+        href="https://astro.build/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Astrojs
+      </Link> instead.
+    </p>
+
+    <p>
+      I hope to continue updating this website as time goes along and make blog
+      posts (hopefully). Thanks for stopping by!
+    </p>
+  </article>
+
+  <ul class="my-4">
+    <li>
+      <MetaBadge class="mr-2">SOURCE</MetaBadge>
+      <Link
+        href="https://github.com/DannyBoy5930/ponktoku-homepage"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        github.com/DannyBoy5930/ponktoku-homepage<ExternalLinkSvg />
+      </Link>
+    </li>
+    <li>
+      <MetaBadge class="mr-2">STACK</MetaBadge>
+      <span>Astrojs, Tailwindcss, Flowbite</span>
+    </li>
+    <li>
+      <MetaBadge class="mr-2">BLOGPOST</MetaBadge>
+      <span>Coming soon...</span>
+    </li>
+  </ul>
+
+  <Image
+    src={wordwise_01}
+    alt="WordWise Direct Translation Page"
+    class="rounded-lg mb-4"
+    quality={"mid"}
+  />
+  <Image
+    src={wordwise_02}
+    alt="WordWise Mass File Translation Page"
+    class="rounded-lg mb-4"
+    quality={"mid"}
+  />
+</MainLayout>
