@@ -6,7 +6,7 @@ const { title, href, thumbnail, alt, description } = Astro.props;
 
 <div>
   <a href={"/works/" + href} class="description">
-    <Image src={thumbnail} alt={alt} />
+    <Image src={thumbnail} alt={alt} height={400} width={720} />
     <div class="text-center my-2 text-xl">{title}</div>
     <p class="text-sm text-center">{description}</p>
   </a>

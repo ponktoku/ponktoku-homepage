@@ -7,8 +7,9 @@ import Link from "../../components/Link.astro";
 
 import { Image } from "astro:assets";
 
-import wordwise_01 from "../../assets/works/WordWiseFirstPage.png";
-import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
+import homepage_01 from "../../assets/works/homepage_01.png";
+import homepage_02 from "../../assets/works/homepage_02.png";
+import homepage_03 from "../../assets/works/homepage_03.jpeg";
 ---
 
 <MainLayout title="ponktoku.dev (Homepage)">
@@ -32,8 +33,8 @@ import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
         target="_blank"
         rel="noopener noreferrer"
       >
-        Takuya Matsuyama's homepage,
-      </Link> however this website is built with <Link
+        Takuya Matsuyama's homepage
+      </Link>however this website is built with <Link
         href="https://astro.build/"
         target="_blank"
         rel="noopener noreferrer"
@@ -70,14 +71,20 @@ import wordwise_02 from "../../assets/works/WordWiseSecondPage.png";
   </ul>
 
   <Image
-    src={wordwise_01}
-    alt="WordWise Direct Translation Page"
+    src={homepage_01}
+    alt="Homepage index"
     class="rounded-lg mb-4"
     quality={"mid"}
   />
   <Image
-    src={wordwise_02}
-    alt="WordWise Mass File Translation Page"
+    src={homepage_02}
+    alt="All blog posts page"
+    class="rounded-lg mb-4"
+    quality={"mid"}
+  />
+  <Image
+    src={homepage_03}
+    alt="ponktoku.dev development environment"
     class="rounded-lg mb-4"
     quality={"mid"}
   />
