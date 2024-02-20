@@ -7,6 +7,6 @@ import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), preact(), mdx(), expressiveCode()],
+  integrations: [tailwind(), expressiveCode(), mdx()],
   output: "static"
 });
