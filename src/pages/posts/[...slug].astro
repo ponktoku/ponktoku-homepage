@@ -62,11 +62,11 @@ const { Content } = await entry.render();
 
 <!-- These styles effect the post Content -->
 <style is:global>
-  p {
+  #content p {
     margin: 20px 0;
   }
 
-  h2 {
+  #content h2 {
     margin: 20px 0;
     font-size: 1.6rem;
     font-weight: 500;
@@ -76,15 +76,17 @@ const { Content } = await entry.render();
     margin-top: 20px;
   }
 
-  #content a {
-    color: #3d7aed;
+  #content ol {
+    list-style-type: decimal;
+    margin: 0 30px;
   }
 
-  #content a:hover {
-    text-decoration-line: underline;
-    text-underline-offset: 2px;
+  #content ul {
+    list-style-type: disc;
+    margin: 0 30px;
   }
-  #content a.dark {
-    color: #eb5db4;
+
+  #content figure {
+    margin: 20px 0;
   }
 </style>

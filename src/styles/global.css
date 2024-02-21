@@ -59,3 +59,11 @@ html.dark {
   --pagefind-ui-background: #27272A;
   --pagefind-ui-border: #3F3F46;
 }
+
+html code {
+  background-color: #EDF2F7;
+}
+
+html.dark code {
+  background-color: var(--highlight-box-dark);
+}
