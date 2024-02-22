@@ -8,6 +8,8 @@ This homepage takes design inspiration from other homepages such as [Takuya Mats
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Flowbite](https://flowbite.com/) - Tailwind component library
 - [MDX](https://docs.astro.build/en/guides/integrations-guide/mdx/) - Astrojs/mdx integration
+- [pagefind](https://pagefind.app/) - Search library for static websites
+- [astro-expressive-code](https://expressive-code.com/) - Enhanced code blocks in md/mdx posts
 
 ## 🚀 Project Structure
 
