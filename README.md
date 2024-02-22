@@ -1,6 +1,8 @@
 # Danny's Homepage
 
-This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/). 
+This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/).
+
+![Danny Bao's personal homepage](https://imgur.com/a/AwapuGT)
 
 ## Stack
 
@@ -49,6 +51,8 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm run preview`         | Preview your build locally, before deploying     |
 | `pnpm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm run astro -- --help` | Get help using the Astro CLI                     |
+
+Note: It is required to run pnpm run build after adding a blog post, so that pagefind can create a new pagefind index. That pagefind index is then copied from './dist/' into the public folder so that the pagefind search bar can work on the local dev server.
 
 ## Licensing
 
