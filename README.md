@@ -2,7 +2,7 @@
 
 This homepage takes design inspiration from other homepages such as [Takuya Matsuyama's Homepage](https://www.craftz.dog/) and [Florian Lefebvre's Homepage](https://florian-lefebvre.dev/).
 
-![Danny Bao's personal homepage](https://imgur.com/a/AwapuGT)
+![Danny Bao's personal homepage](https://i.imgur.com/XWKQZpD.png)
 
 ## Stack
 
