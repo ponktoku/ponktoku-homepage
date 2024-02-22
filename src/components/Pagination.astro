@@ -2,7 +2,6 @@
 const { length, currentUrl, currentPage, firstUrl, prevUrl, nextUrl, lastUrl } =
   Astro.props;
 const paginationList = Array.from({ length: Number(length) }, (_, i) => i + 1);
-console.log(currentPage);
 ---
 
 <nav aria-label="Page navigation example" class="flex justify-center mt-8">
