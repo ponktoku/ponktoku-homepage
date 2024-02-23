@@ -45,13 +45,13 @@ import SkillsOther from "../components/cv/SkillsOther.astro";
     <h2 class="font-bold text-2xl mt-6 mb-3">Skills</h2>
     <div>
       <ul>
-        <div class="grid grid-cols-5">
+        <div class="grid grid-cols-3 md:grid-cols-5">
           <SkillsTech
             techSkills={["HTML", "CSS", "JavaScript", "Tailwind", "Astro"]}
           />
         </div>
         <li class="font-semibold text-xl mt-3 mb-2">Other</li>
-        <div class="grid grid-cols-5">
+        <div class="grid grid-cols-3 md:grid-cols-5">
           <SkillsOther otherSkills={["Figma"]} />
         </div>
       </ul>
