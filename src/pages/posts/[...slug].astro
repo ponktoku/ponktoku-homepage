@@ -5,6 +5,7 @@ import Button from "../../components/Button.astro";
 import { formatDate, capitaliseAll } from "../../utils";
 import Tags from "../../components/Tags.astro";
 import CategoryBadge from "../../components/CategoryBadge.astro";
+import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
   const allBlogArticles: CollectionEntry<"blog">[] =
@@ -39,11 +40,12 @@ const { Content } = await entry.render();
         {formatDate(entry.data.pubDate)}
       </p>
     </div>
-    <img
+    <Image
       src={"/cover/" + entry.data.cover}
       alt="Article cover image"
+      height={270}
+      width={640}
       class="my-6 rounded-lg"
-      width="640"
     />
     <h1 class="text-4xl font-bold mb-4">
       {entry.data.title}
