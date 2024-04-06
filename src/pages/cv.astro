@@ -4,6 +4,8 @@ import TimeLineEducation from "../components/cv/TimeLineEducation.astro";
 import TimeLineExperience from "../components/cv/TimeLineExperience.astro";
 import SkillsTech from "../components/cv/SkillsTech.astro";
 import SkillsOther from "../components/cv/SkillsOther.astro";
+import Link from "../components/Link.astro";
+import ExternalLinkSvg from "../components/ExternalLinkSvg.astro";
 ---
 
 <MainLayout title="CV">
@@ -35,9 +37,23 @@ import SkillsOther from "../components/cv/SkillsOther.astro";
     <h2 class="font-bold text-2xl my-6">Certifications</h2>
     <ul>
       <li class="list-disc ml-4">
-        Total TypeScript Beginner's TypeScript Workshop
+        Total TypeScript Beginner's TypeScript Workshop <Link
+        href="https://www.totaltypescript.com/tutorials/beginners-typescript"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        (Link)<ExternalLinkSvg />
+        </Link>
       </li>
-      <li></li>
+      <li class="list-disc ml-4">
+        ByteGrad Professional React & Next.js Course <Link
+        href="https://bytegrad.com/courses/professional-react-nextjs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        (Link)<ExternalLinkSvg />
+        </Link>
+      </li>
     </ul>
   </section>
 
@@ -47,7 +63,7 @@ import SkillsOther from "../components/cv/SkillsOther.astro";
       <ul>
         <div class="grid grid-cols-3 md:grid-cols-5">
           <SkillsTech
-            techSkills={["HTML", "CSS", "JavaScript", "Tailwind", "Astro"]}
+            techSkills={["HTML", "CSS", "JavaScript", "TailwindCSS", "Astro", "React", "Next.js"]}
           />
         </div>
         <li class="font-semibold text-xl mt-3 mb-2">Other</li>
